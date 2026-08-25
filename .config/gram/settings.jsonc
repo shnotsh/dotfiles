@@ -1,0 +1,233 @@
+// Gram settings
+//
+// For information on how to configure Gram, see the Gram
+// documentation: gram://docs/configuring-gram
+//
+// To see all of Gram's default settings without changing your
+// custom settings, run `gram: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+	"ensure_final_newline_on_save": false,
+ "remove_trailing_whitespace_on_save": false,
+ "restore_on_startup": "last_session",
+ "git_panel": {
+  "default_width": 360.0,
+  "fallback_branch_name": "master",
+  "status_style": "icon",
+  "button": true
+ },
+ "outline_panel": {
+  "file_icons": true,
+  "button": false
+ },
+ "centered_layout": {
+  "left_padding": 0.2
+ },
+ "inlay_hints": {
+  "show_parameter_hints": true
+ },
+ "use_on_type_format": false,
+ "smooth_scroll": {
+  "enabled": false
+ },
+ "icon_theme": "Gram (Default)",
+ "relative_line_numbers": "disabled",
+ "node": {
+  "allow_prettier_download": true,
+  "allow_binary_download": false
+ },
+ "lsp": {
+  "package-version-server": {
+   "binary": {
+    "allow_binary_download": true,
+    "ignore_system_version": true,
+    "enable_auto_updates": true
+   },
+   "enable_lsp_tasks": true
+  },
+  "json-language-server": {
+   "binary": {
+    "ignore_system_version": false,
+    "allow_binary_download": true
+   },
+   "enable_lsp_tasks": true
+  },
+  "gdscript": {
+   "binary": {
+    "allow_binary_download": true
+   },
+   "enable_lsp_tasks": true
+  },
+  "ols": {
+   "binary": {
+    "allow_binary_download": true
+   },
+   "enable_lsp_tasks": true
+  }
+ },
+ "hide_mouse": "never",
+ "proxy": "",
+ "colorize_brackets": false,
+ "hover_popover_delay": 100,
+ "vim_mode": false,
+ "show_wrap_guides": false,
+ "minimum_contrast_for_highlights": 45.0,
+ "cursor_shape": "bar",
+ "multi_cursor_modifier": "cmd_or_ctrl",
+ "terminal": {
+  "button": true,
+  "toolbar": {
+   "breadcrumbs": false
+  },
+  "dock": "bottom",
+  "font_weight": 600.0,
+  "font_size": 16.0
+ },
+ "format_on_save": "off",
+ "hover_popover_enabled": true,
+	"auto_signature_help": false,
+	"sticky_scroll": {
+		"enabled": false,
+	},
+	"hidden_files": [
+		"**/*.tscn",
+		"**/*.svg",
+		"**/*.png",
+		"**/*.import",
+		"*.godot",
+		"**/*.blend1",
+		"**/*.translation",
+		"**/*.uid",
+	],
+	"use_system_window_tabs": false,
+	"bottom_dock_layout": "contained",
+	"preview_tabs": {
+		"enable_preview_from_multibuffer": true,
+  "enable_preview_from_project_panel": true,
+  "enabled": true,
+	},
+	"tabs": {
+		"close_position": "right",
+		"file_icons": false,
+		"git_status": false,
+	},
+	"tab_bar": {
+		"show_tab_bar_buttons": true,
+  "show_nav_history_buttons": false,
+  "show": true,
+	},
+	"title_bar": {
+		"show_menus": false,
+		"show_user_picture": false,
+		"show_onboarding_banner": false,
+		"show_project_items": true,
+		"show_branch_name": true,
+		"show_branch_icon": false,
+	},
+	"debugger": {
+		"dock": "left",
+  "button": true,
+	},
+	"search": {
+		"button": true,
+	},
+	"diagnostics": {
+		"button": true,
+	},
+	"status_bar": {
+		"icon_size": "default",
+  "active_file": true,
+  "position": "bottom",
+  "show": true,
+  "cursor_position_button": false,
+		"active_language_button": false,
+	},
+	"project_panel": {
+		"auto_fold_dirs": true,
+  "indent_guides": {
+   "show": "always"
+  },
+  "sticky_scroll": true,
+  "scrollbar": {
+   "show": "never"
+  },
+  "indent_size": 8.0,
+  "dock": "left",
+  "hide_hidden": true,
+		"hide_root": true,
+		"starts_open": true,
+		"auto_reveal_entries": true,
+		"git_status": true,
+		"folder_icons": true,
+		"file_icons": false,
+		"entry_spacing": "tight",
+		"default_width": 360.0,
+		"hide_gitignore": true,
+		"button": true,
+	},
+	"hard_tabs": true,
+	"toolbar": {
+		"code_actions": false,
+		"selections_menu": false,
+		"quick_actions": false,
+		"breadcrumbs": false,
+	},
+	"inline_code_actions": true,
+	"gutter": {
+		"min_line_number_digits": 0,
+		"folds": false,
+		"breakpoints": true,
+		"runnables": true,
+		"line_numbers": true,
+	},
+	"middle_click_paste": false,
+	"indent_guides": {
+		"active_line_width": 1,
+  "coloring": "fixed",
+		"line_width": 2,
+		"enabled": true,
+	},
+	"ui_font_weight": 500.0,
+	"ui_font_family": ".SystemUIFont",
+	"buffer_line_height": {
+  "custom": 1.4 //1.618
+ },
+	"buffer_font_weight": 400.0,
+	"git": {
+		"inline_blame": {
+			"enabled": false,
+		},
+	},
+	"base_keymap": "VSCode",
+	"scroll_sensitivity": 2.0,
+	"minimap": {
+		"max_width_columns": 60,
+		"current_line_highlight": "all",
+		"thumb_border": "right_open",
+		"thumb": "always",
+		"show": "never",
+	},
+	"scrollbar": {
+		"show": "never",
+  "git_diff": true,
+		"axes": {
+			"horizontal": true,
+			"vertical": false,
+		},
+	},
+	"cursor_blink": true,
+	"buffer_font_fallbacks": ["JetBrainsMono Nerd Font Mono"],
+	"buffer_font_family": "Iosevka Custom",
+	"tab_size": 4,
+	"ui_font_size": 16.0,
+	"buffer_font_size": 20.0,
+	"theme": "Kanagawa Dragon Noctalia",
+}

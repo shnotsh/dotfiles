@@ -1,0 +1,13 @@
+partial modifier_keys
+xkb_symbols "swap" {
+    replace key <CAPS> {
+        [ Alt_L ]
+    };
+
+    replace key <LALT> {
+        [ Caps_Lock ]
+    };
+
+    modifier_map Mod1 { <CAPS> };
+    modifier_map Lock { <LALT> };
+};

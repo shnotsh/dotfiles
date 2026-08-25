@@ -1,0 +1,24 @@
+[
+	{
+		"bindings": {
+			"f1": [
+    "task::Spawn",
+    {
+     "task_name": "Run Project"
+    }
+   ],
+			"alt-h": [
+    "task::Spawn",
+    {
+     "task_name": "Run Headless"
+    }
+   ],
+		},
+	},
+ {
+  "context": "Workspace",
+  "bindings": {
+   "cmd-space": "terminal_panel::Toggle"
+  }
+ }
+]

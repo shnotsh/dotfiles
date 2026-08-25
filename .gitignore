@@ -1,0 +1,32 @@
+# Editor and OS noise
+.DS_Store
+._*
+.gitconfig
+*~
+*.bak
+*.log
+
+# Application caches and generated state
+**/Cache/
+**/Code Cache/
+**/GPUCache/
+**/Crashpad/
+**/logs/
+**/recent-files.txt
+**/recent-searches.txt
+**/recent_dirs
+
+# Browser secrets and browsing/session state. Only the explicitly collected
+# Zen customization files should be tracked.
+**/cookies.sqlite*
+**/places.sqlite*
+**/key4.db
+**/cert9.db
+**/logins*.json
+**/logins.db
+**/sessionstore-backups/
+**/zen-sessions-backup/
+**/storage/
+**/storage-sync-v2.sqlite*
+**/webappsstore.sqlite*
+
