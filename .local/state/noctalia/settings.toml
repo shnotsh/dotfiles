@@ -229,7 +229,7 @@ targets = """[
   {\"match\":\"scrcpy\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
   {\"match\":\"brave\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
   {\"match\":\"firefox\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
-  {\"match\":\"zen-browser\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"helium\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
   {\"match\":\"chromium\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
   {\"match\":\"code\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
   {\"match\":\"codium\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
@@ -285,7 +285,7 @@ font_family = "Cantarell"
     category_icons_only = true
     compact = true
     layout = "simple"
-    pinned = [ "zen", "dev.zed.Zed", "org.godotengine.Godot", "blender", "org.kde.dolphin" ]
+    pinned = [ "helium", "dev.zed.Zed", "org.godotengine.Godot", "blender", "org.kde.dolphin" ]
     show_app_actions = true
     show_icons = false
 
