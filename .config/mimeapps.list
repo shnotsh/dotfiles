@@ -1,12 +1,12 @@
 [Added Associations]
-image/gif=com.interversehq.qView.desktop;org.kde.gwenview.desktop;org.kde.kdenlive.desktop;gmic_qt.desktop;krita_gif.desktop;zen.desktop;firefox.desktop;
-image/jpeg=com.interversehq.qView.desktop;org.kde.gwenview.desktop;krita_jpeg.desktop;zen.desktop;firefox.desktop;org.kde.kdenlive.desktop;satty.desktop;gmic_qt.desktop;
-image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;zen.desktop;gmic_qt.desktop;firefox.desktop;satty.desktop;krita_png.desktop;org.kde.kdenlive.desktop;
+image/gif=com.interversehq.qView.desktop;org.kde.gwenview.desktop;org.kde.kdenlive.desktop;gmic_qt.desktop;krita_gif.desktop;
+image/jpeg=com.interversehq.qView.desktop;org.kde.gwenview.desktop;krita_jpeg.desktop;org.kde.kdenlive.desktop;satty.desktop;gmic_qt.desktop;
+image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;gmic_qt.desktop;satty.desktop;krita_png.desktop;org.kde.kdenlive.desktop;
 video/matroska=mpv.desktop;org.kde.kdenlive.desktop;
 video/vnd.avi=mpv.desktop;org.kde.kdenlive.desktop;
-x-scheme-handler/chrome=zen.desktop;
-x-scheme-handler/http=zen.desktop;
-x-scheme-handler/https=zen.desktop;
+x-scheme-handler/chrome=helium.desktop;
+x-scheme-handler/http=helium.desktop;
+x-scheme-handler/https=helium.desktop;
 
 [Default Applications]
 application/x-extension-htm=helium.desktop
@@ -24,7 +24,7 @@ text/plain=org.gnome.TextEditor.desktop;
 video/matroska=mpv.desktop;
 video/vnd.avi=mpv.desktop;
 x-scheme-handler/anytype=anytype.desktop
-x-scheme-handler/chrome=zen.desktop
+x-scheme-handler/chrome=helium.desktop
 x-scheme-handler/claude=com.anthropic.Claude.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/codex=chatgpt.desktop

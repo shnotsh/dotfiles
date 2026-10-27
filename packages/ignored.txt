@@ -1,11 +1,9 @@
 # Installed on this machine but intentionally not restored on a fresh install.
 # collect.sh stops reporting them; bootstrap.sh never reads this file.
-anytype-bin
 butler
 claude-desktop
 omnissa-horizon-client
 openai-codex-bin
-opencode
 slack-desktop-wayland
 vesktop-bin
 zoom
