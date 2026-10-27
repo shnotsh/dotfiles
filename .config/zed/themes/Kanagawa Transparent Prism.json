@@ -31,7 +31,7 @@
         "element.background": "#363537",
         "element.hover": "#2a2a2a30",
         "element.selected": "#ffffff18",
-        "elevated_surface.background": "#13131399",
+        "elevated_surface.background": "#131313",
         "error": "#fc618d",
         "error.background": "#1c1c1c",
         "error.border": "#0f0f0f",
@@ -49,6 +49,8 @@
         "modified": "#fd9353",
         "pane_group.border": "#0f0f0f",
         "panel.background": "#00000000",
+        "panel.overlay_background": "#13131399",
+        "panel.overlay_hover": "#25252599",
         "panel.focused_border": "#00000000",
         "players": [
           {

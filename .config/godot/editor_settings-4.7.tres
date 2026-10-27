@@ -1,5 +1,46 @@
 [gd_resource type="EditorSettings" format=3]
 
+[sub_resource type="InputEventKey" id="InputEventKey_wtti0"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_d4l7p"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_573tg"]
+command_or_control_autoremap = true
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_todk6"]
+device = -1
+ctrl_pressed = true
+physical_keycode = 88
+
+[sub_resource type="InputEventKey" id="InputEventKey_i5yud"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_wh1dq"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_fjlhk"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_1mho1"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_t12wb"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_yivwh"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
 [sub_resource type="InputEventKey" id="InputEventKey_cc7bj"]
 device = -1
 keycode = 4194336
@@ -7,6 +48,92 @@ keycode = 4194336
 [sub_resource type="InputEventKey" id="InputEventKey_ysc0d"]
 device = -1
 keycode = 4194332
+
+[sub_resource type="InputEventKey" id="InputEventKey_xgvth"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_x07dp"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_i5cws"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_637u2"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_umgiu"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_udnrk"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_ktynd"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_cjtjm"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_wu4wg"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_y6v6e"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_qdbd2"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_d4ul4"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_d7420"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_ufvu6"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_6kg7i"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_t1m5l"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_b17ep"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_idmyq"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_qnpec"]
+keycode = 4194312
+
+[sub_resource type="InputEventKey" id="InputEventKey_o2nfl"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="InputEventKey" id="InputEventKey_nyaj4"]
+device = -1
+shift_pressed = true
+ctrl_pressed = true
+keycode = 85
 
 [resource]
 resource_local_to_scene = false
@@ -35,7 +162,7 @@ interface/editor/fonts/font_disable_embedded_bitmaps = true
 interface/editor/fonts/font_allow_msdf = true
 interface/editor/fonts/main_font = ""
 interface/editor/fonts/main_font_bold = ""
-interface/editor/fonts/code_font = "/home/sh/Documents/Fonts/IosevkaCustom-Regular.ttf"
+interface/editor/fonts/code_font = ""
 interface/editor/timers/dragging_hover_wait_seconds = 0.5
 interface/editor/display/single_window_mode = false
 interface/editor/behavior/save_on_focus_loss = false
@@ -46,7 +173,7 @@ interface/editor/timers/low_processor_mode_sleep_usec = 6900
 interface/editor/timers/unfocused_low_processor_mode_sleep_usec = 100000
 interface/editor/behavior/import_resources_when_unfocused = false
 interface/editor/display/vsync_mode = 1
-interface/editor/display/update_continuously = false
+interface/editor/display/update_continuously = true
 interface/editor/appearance/collapse_main_menu = false
 interface/editor/appearance/show_renderer_selector = false
 interface/inspector/max_array_dictionary_items_per_page = 20
@@ -70,7 +197,7 @@ interface/inspector/color_picker_show_intensity = true
 interface/theme/follow_system_theme = false
 interface/theme/style = "Modern"
 interface/theme/color_preset = "Default"
-interface/theme/spacing_preset = "Default"
+interface/theme/spacing_preset = "Compact"
 interface/theme/icon_and_font_color = 0
 interface/theme/base_color = Color(0.161, 0.161, 0.161, 1)
 interface/theme/accent_color = Color(0.337, 0.62, 1, 1)
@@ -82,8 +209,8 @@ interface/theme/draw_relationship_lines = 1
 interface/theme/relationship_line_opacity = 0.1
 interface/theme/border_size = 0
 interface/theme/corner_radius = 4
-interface/theme/base_spacing = 4
-interface/theme/additional_spacing = 0
+interface/theme/base_spacing = 2
+interface/theme/additional_spacing = 2
 interface/theme/use_monospace_font_for_editor_symbols = true
 interface/theme/custom_theme = ""
 interface/touchscreen/enable_touch_optimizations = false
@@ -111,7 +238,7 @@ filesystem/file_dialog/thumbnail_size = 64
 filesystem/quick_open_dialog/max_results = 100
 filesystem/quick_open_dialog/max_fuzzy_misses = 2
 filesystem/quick_open_dialog/default_display_mode = 0
-filesystem/import/blender/blender_path = ""
+filesystem/import/blender/blender_path = "/usr/bin/blender"
 filesystem/import/blender/rpc_port = 6011
 filesystem/import/blender/rpc_server_uptime = 5
 filesystem/import/fbx/fbx2gltf_path = ""
@@ -334,7 +461,7 @@ export/windows/osslsigncode = ""
 _editor_settings_advanced_mode = true
 _project_settings_advanced_mode = true
 _export_template_download_directory = ""
-_default_feature_profile = ""
+_default_feature_profile = "stripped"
 _script_setup_templates_dictionary = {
 "AnimationPlayer": "0NodeDefault",
 "Control": "0NodeDefault",
@@ -349,15 +476,72 @@ _script_setup_use_script_templates = true
 _use_favorites_root_selection = false
 _editor_log_filter_0 = true
 _editor_log_filter_2 = true
-_editor_log_filter_1 = true
+_editor_log_filter_1 = false
 _editor_log_filter_3 = true
 _editor_log_filter_4 = true
 _editor_log_collapse = false
+@icons/icon_color = "Mesh"
+@icons/declaration_language = "GDScript"
+@icons/double_scale = false
 shortcuts = [{
 "name": "editor/editor_help",
 "shortcuts": [SubResource("InputEventKey_cc7bj")]
 }, {
 "name": "editor/run_project",
 "shortcuts": [SubResource("InputEventKey_ysc0d")]
+}, {
+"name": "scene_tree/delete",
+"shortcuts": [SubResource("InputEventKey_xgvth"), SubResource("InputEventKey_x07dp")]
+}, {
+"name": "filesystem_dock/delete",
+"shortcuts": [SubResource("InputEventKey_i5cws"), SubResource("InputEventKey_637u2")]
+}, {
+"name": "connections_editor/disconnect",
+"shortcuts": [SubResource("InputEventKey_umgiu"), SubResource("InputEventKey_udnrk")]
+}, {
+"name": "groups_editor/delete",
+"shortcuts": [SubResource("InputEventKey_ktynd"), SubResource("InputEventKey_cjtjm")]
+}, {
+"name": "spatial_editor/lock_transform_x",
+"shortcuts": []
+}, {
+"name": "animation_marker_edit/delete_selection",
+"shortcuts": [SubResource("InputEventKey_wu4wg"), SubResource("InputEventKey_y6v6e")]
+}, {
+"name": "animation_editor/delete_selection",
+"shortcuts": [SubResource("InputEventKey_qdbd2"), SubResource("InputEventKey_d4ul4")]
+}, {
+"name": "sprite_frames/delete_animation",
+"shortcuts": [SubResource("InputEventKey_d7420"), SubResource("InputEventKey_ufvu6")]
+}, {
+"name": "sprite_frames/delete",
+"shortcuts": [SubResource("InputEventKey_6kg7i"), SubResource("InputEventKey_t1m5l")]
+}, {
+"name": "tiles_editor/delete",
+"shortcuts": [SubResource("InputEventKey_b17ep"), SubResource("InputEventKey_idmyq")]
+}, {
+"name": "grid_map/move_tool",
+"shortcuts": []
+}, {
+"name": "audio_bus_editor/delete_selected_bus",
+"shortcuts": [SubResource("InputEventKey_qnpec"), SubResource("InputEventKey_o2nfl")]
+}, {
+"name": "spatial_editor/trackball",
+"shortcuts": [SubResource("InputEventKey_nyaj4")]
 }]
-builtin_action_overrides = []
+builtin_action_overrides = [{
+"events": [SubResource("InputEventKey_wtti0"), SubResource("InputEventKey_d4l7p")],
+"name": "ui_text_delete"
+}, {
+"events": [SubResource("InputEventKey_573tg"), SubResource("InputEventKey_todk6")],
+"name": "ui_text_delete_word"
+}, {
+"events": [SubResource("InputEventKey_i5yud"), SubResource("InputEventKey_wh1dq")],
+"name": "ui_graph_delete"
+}, {
+"events": [SubResource("InputEventKey_fjlhk"), SubResource("InputEventKey_1mho1")],
+"name": "ui_filedialog_delete"
+}, {
+"events": [SubResource("InputEventKey_t12wb"), SubResource("InputEventKey_yivwh")],
+"name": "ui_colorpicker_delete_preset"
+}]

@@ -1,0 +1,15 @@
+ai-usagebar-bin
+anytype-bin
+butler
+cliamp-bin
+dualsensectl
+figma-linux-next-bin
+notion-app-electron
+omnissa-horizon-client
+openai-codex-bin
+pcloud-drive
+protonup-qt-bin
+qt5ct-kde
+slack-desktop-wayland
+unixbench
+zoom

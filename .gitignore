@@ -30,3 +30,6 @@
 **/storage-sync-v2.sqlite*
 **/webappsstore.sqlite*
 
+
+# Python bytecode
+**/__pycache__/

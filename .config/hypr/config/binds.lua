@@ -32,15 +32,14 @@ hl.bind("CONTROL + Q",               hl.dsp.window.close())
 hl.bind(mainMod .. " + W",           hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D",           hl.dsp.window.fullscreen({ mode = 1 }))
 hl.bind(mainMod .. " + F",           hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + J",           hl.dsp.layout("togglesplit"))
+hl.bind(mainMod .. " + G",           hl.dsp.layout("togglesplit"))
 
 -- Change focus
 hl.bind(mainMod .. " + Left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + Right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + Up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + Down",  hl.dsp.focus({ direction = "down" }))
-hl.bind("ALT + Tab",           hl.dsp.window.cycle_next())
-hl.bind(mainMod .. " + Tab",   hl.dsp.exec_cmd(noctCall .. "window-switcher"))
+hl.bind("ALT + Tab",           hl.dsp.exec_cmd(noctCall .. "window-switcher"))
 
 -- Move active window around workspaces & monitors
 hl.bind(mainMod .. " + SHIFT + Up",                   hl.dsp.window.move({ direction = "u" }))
@@ -129,8 +128,10 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(noctCall .. "brightness-down"),
 -------------------
 
 -- Screen Capture
+hl.bind(mainMod .. " + H",     hl.dsp.exec_cmd(noctCall .. "annotate"))
 hl.bind(mainMod .. " + C",     hl.dsp.exec_cmd("hyprpicker -a -n"))
 hl.bind(mainMod .. " + A",               hl.dsp.exec_cmd(noctCall .. "screenshot-region"))
+hl.bind(mainMod .. " + J",     hl.dsp.exec_cmd(os.getenv("HOME") .. "/.local/bin/screen-record-toggle"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(noctCall .. "screenshot-fullscreen"))
 
 -- Theming and Wallpaper
@@ -151,17 +152,12 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(noctCall .. "panel-toggle clipboard")
 -- hl.bind(mainMod .. " + 2", hl.dsp.focus({ monitor = MONITOR2 }))
 -- hl.bind(mainMod .. " + 3", hl.dsp.focus({ monitor = MONITOR3 }))
 
--- Focus on workspace number
--- Absolute
--- for i = 1, NUM_WPM do
---    local key = i % 10
---    hl.bind(mainMod .. "+" .. key, hl.dsp.focus({ workspace = i }))
--- end
--- Relative
+-- Focus by workspace number so named workspaces cannot shift the shortcuts.
 for i = 1, NUM_WPM do
 	local key = i % 10
-	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = "m~" .. i }))
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 end
+hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "name:" }))
 
 -- Move to adjacent workspaces and next empty on a given monitor
 -- hl.bind(mainMod .. " + CONTROL + Right",       hl.dsp.focus({ workspace = "m+1" }))

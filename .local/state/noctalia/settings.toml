@@ -1,0 +1,447 @@
+config_version = 15
+
+[bar.default]
+center = [ "workspaces" ]
+end = [
+    "bar",
+    "tray",
+    "wallhaven",
+    "device_battery",
+    "weather",
+    "keyboard_layout",
+    "network",
+    "volume",
+    "clock",
+    "notifications"
+]
+font_family = "Cantarell"
+font_weight = 600
+padding = 12
+scale = 1.0000000074505806
+shadow = false
+start = [ "control-center", "launcher", "active_window", "group:g1" ]
+thickness = 28
+widget_spacing = 10
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border = ""
+    enabled = false
+    fill = "on_secondary"
+    id = "g1"
+    members = [ "cpu", "temp", "sysmon", "sysmon_2", "sysmon_3", "ram" ]
+    opacity = 0.0
+    padding = 6.0
+
+[battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
+warning_threshold = 10
+
+[battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_7"]
+warning_threshold = 15
+
+[brightness]
+enable_ddcutil = true
+sync_all_monitors = true
+
+[calendar]
+enabled = true
+
+[control_center]
+sidebar = "full"
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+enabled = true
+inactive_opacity = 0.99999997764825821
+inactive_scale = 1.0
+item_spacing = 16
+launcher_icon = "category-filled"
+launcher_position = "start"
+magnification_scale = 1.4000000059604645
+reserve_space = false
+show_dots = true
+smart_auto_hide = true
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 3600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 7200.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = false
+    timeout = 660.0
+
+[keybinds]
+delete = [ "Delete", "Ctrl+BackSpace" ]
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 1018.0
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 1048.333251953125
+    output = "HDMI-A-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 640.0
+    cy = 538.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[notification]
+scale = 0.70000000298023224
+
+[osd.kinds]
+media = false
+
+[plugin_settings."felipeartur/ai-usagebar"]
+panel_open_near_click = true
+refresh_minutes = 10
+
+[plugin_settings."noctalia/wallhaven"]
+download_dir = "/home/sh/Pictures/Wallpapers"
+
+[plugin_settings."nomadcxx/gamer-mode"]
+auto_performance = false
+glyph = "bluetooth-device-gamepad"
+icon_file = "/home/sh/Pictures/Icons/game_mode_off.svg"
+icon_file_active = "/home/sh/Pictures/Icons/game_mode_on.svg"
+main_open_near_click = true
+targets = """[
+  {\"match\":\"awww-daemon\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"swww-daemon\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"hyprpaper\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"swaybg\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"mpvpaper\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"qbittorrent\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"transmission-gtk\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"deluge-gtk\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"syncthing\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"dropbox\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"nextcloud\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"megasync\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"baloo_file\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"tracker-miner-fs-3\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"adb\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"scrcpy\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"light\"]},
+  {\"match\":\"brave\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"firefox\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"zen-browser\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"chromium\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"code\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"codium\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"zed\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"rust-analyzer\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"gopls\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"clangd\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"typescript-language-server\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"lua-language-server\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"cargo\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"rustc\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"gradle\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"tsc\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"webpack\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"vite\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"make\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]},
+  {\"match\":\"aider\",\"kind\":\"process\",\"action\":\"freeze\",\"profiles\":[\"heavy\"]}
+]"""
+
+[plugins]
+enabled = [
+    "nomadcxx/gamer-mode",
+    "noctalia/translator",
+    "thaer99ob/default-apps",
+    "sh/device-battery",
+    "miguelfm/ai-triage",
+    "noctalia/wallhaven",
+    "kenn/keybind-cheatsheet"
+]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    kind = "path"
+    location = "/home/sh/Developer/solaar-noctalia"
+    name = "device-battery-dev"
+
+[shell]
+font_family = "Cantarell"
+
+    [shell.greeter_sync]
+    auto_sync = false
+
+    [shell.launcher]
+    category_icons_only = true
+    compact = true
+    layout = "simple"
+    pinned = [ "zen", "dev.zed.Zed", "org.godotengine.Godot", "blender", "org.kde.dolphin" ]
+    show_app_actions = true
+    show_icons = false
+
+    [shell.screen_corners]
+    enabled = true
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[theme]
+builtin = "Eldritch"
+community_palette = "Mine"
+custom_palette = "wallhaven-zp9rmy-mo"
+mode = "dark"
+source = "custom"
+wallpaper_scheme = "m3-monochrome"
+
+[wallpaper.default]
+path = "/home/sh/Pictures/Wallpapers/wallhaven-og7p79.jpg"
+
+[wallpaper.last]
+path = "/home/sh/Pictures/Wallpapers/wallhaven-og7p79.jpg"
+
+[wallpaper.monitors.DP-1]
+path = "/home/sh/Pictures/Wallpapers/wallhaven-zp9rmy.png"
+
+[wallpaper.monitors.HDMI-A-1]
+path = "/home/sh/Pictures/Wallpapers/wallhaven-og7p79.jpg"
+
+[widget.active_window]
+display = "text_only"
+max_length = 800
+
+[widget.bar]
+type = "miguelfm/ai-triage:bar"
+
+[widget.clock]
+format = "{:%a %b %d %H:%M}"
+
+[widget.control-center]
+custom_image = "/home/sh/Pictures/Icons/start-here-cachyos-min.svg"
+glyph = "settings-filled"
+scale = 1.5
+
+[widget.cpu]
+enabled = false
+
+[widget.device_battery]
+color = "secondary"
+entry_spacing = 6
+font_scale = 0.84999999999999998
+icon_color = "secondary"
+show_offline = false
+type = "sh/device-battery:battery"
+
+[widget.keyboard_layout]
+enabled = false
+show_glyph = false
+
+[widget.launcher]
+color = "outline"
+custom_image = "/home/sh/Pictures/Icons/start-here-cachyos-min.svg"
+enabled = false
+scale = 1.4000000000000001
+
+[widget.network]
+enabled = false
+scale = 1.1000000000000001
+show_label = false
+
+[widget.power_profile]
+enabled = false
+
+[widget.ram]
+stat = "ram_pct"
+
+[widget.session]
+enabled = false
+
+[widget.sysmon]
+custom_image = "/home/sh/Pictures/Icons/graphics-card.svg"
+enabled = false
+stat = "gpu_usage"
+
+[widget.sysmon_2]
+glyph = "temperature"
+show_value = true
+
+[widget.sysmon_3]
+enabled = false
+stat = "gpu_vram"
+
+[widget.temp]
+visualization = "none"
+
+[widget.tray]
+capsule = false
+drawer = true
+drawer_columns = 5
+hidden = []
+match_adjacent_spacing = true
+
+[widget.volume.actions]
+scroll_down = "volume-down 10"
+scroll_up = "volume-up 10"
+
+[widget.wallhaven]
+type = "noctalia/wallhaven:wallhaven"
+
+[widget.weather]
+color = "secondary"
+font_weight = 600
+icon_color = "secondary"
+show_condition = false
+
+[widget.workspaces]
+active_pill_size = 1.0
+capsule = false
+capsule_fill = "#A8A8A8"
+empty_color = "surface_variant"
+focused_color = "#FFFFFF"
+font_family = "Cantarell"
+hide_when_empty = true
+label_source = "name"
+occupied_color = "#424242"
+scale = 1.25
+show_labels = true

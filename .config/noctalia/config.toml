@@ -127,6 +127,7 @@ stat = "ram_used"
 type = "sysmon"
 
 [widget.tray]
+hidden = [ "pcloud.bin", "pcloud", "godothub", "GodotHub" ]
 capsule = true
 capsule_fill = "on_secondary"
 

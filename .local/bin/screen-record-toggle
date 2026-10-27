@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Toggle a region screen recording (bound to Caps+J in Hyprland).
+# 1st press: drag to select an area -> recording starts.  Esc cancels.
+# 2nd press: stop -> MP4 + GIF saved to ~/Videos/Recordings, MP4 path copied.
+
+OUT_DIR="$HOME/Videos/Recordings"
+STATE="${XDG_RUNTIME_DIR:-/tmp}/screen-record-toggle"
+GIF_FPS=15
+GIF_MAX_WIDTH=960
+
+mkdir -p "$OUT_DIR"
+
+# --- Stop if already recording ---
+if [[ -f "$STATE.pid" ]] && kill -0 "$(cat "$STATE.pid")" 2>/dev/null; then
+    pid=$(cat "$STATE.pid")
+    file=$(cat "$STATE.file")
+    kill -INT "$pid"
+    while kill -0 "$pid" 2>/dev/null; do sleep 0.1; done
+    rm -f "$STATE.pid" "$STATE.file"
+
+    printf '%s' "$file" | wl-copy
+    notify-send -a "Screen Recorder" -i media-record "Recording saved" "$(basename "$file")\nCreating GIF…"
+
+    gif="${file%.mp4}.gif"
+    ffmpeg -loglevel error -y -i "$file" -vf \
+        "fps=$GIF_FPS,scale='min($GIF_MAX_WIDTH,iw)':-1:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=5" \
+        "$gif" \
+        && notify-send -a "Screen Recorder" -i image-x-generic "GIF ready" "$(basename "$gif")" \
+        || notify-send -a "Screen Recorder" -u critical "GIF conversion failed" "$file"
+    exit 0
+fi
+
+# --- Start a new recording ---
+if ! command -v gpu-screen-recorder >/dev/null; then
+    notify-send -a "Screen Recorder" -u critical "gpu-screen-recorder not installed" "sudo pacman -S gpu-screen-recorder"
+    exit 1
+fi
+
+region=$(slurp -f "%wx%h+%x+%y") || exit 0   # Esc = cancel
+
+# Encoders want even dimensions
+w=${region%%x*}; rest=${region#*x}; h=${rest%%+*}; pos=${rest#*+}
+region="$(( w - w % 2 ))x$(( h - h % 2 ))+$pos"
+
+file="$OUT_DIR/recording_$(date +%Y-%m-%d_%H-%M-%S).mp4"
+gpu-screen-recorder -w region -region "$region" -c mp4 -f 60 -cursor yes -o "$file" \
+    >"$STATE.log" 2>&1 &
+echo $! >"$STATE.pid"
+echo "$file" >"$STATE.file"
+
+sleep 0.5
+if ! kill -0 "$(cat "$STATE.pid")" 2>/dev/null; then
+    rm -f "$STATE.pid" "$STATE.file"
+    notify-send -a "Screen Recorder" -u critical "Recording failed" "$(tail -3 "$STATE.log")"
+    exit 1
+fi
+notify-send -a "Screen Recorder" -i media-record -t 1500 "Recording…" "Press Caps+J to stop"

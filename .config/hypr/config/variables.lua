@@ -2,7 +2,7 @@
 
 TERMINAL     = "kitty"
 FILE_MANAGER = "dolphin"
-BROWSER      = "zen-browser"
+BROWSER      = "helium-browser"
 EDITOR       = "gnome-text-editor --new-window"
 CALCULATOR   = "gnome-calculator"
 
@@ -13,4 +13,4 @@ MONITOR3 = ""
 PRIMARY_MONITOR = MONITOR1
 
 -- Workspaces
-NUM_WPM = 5 -- Number of workspaces per monitor (Max 10)
+NUM_WPM = 9 -- Number of workspaces per monitor (Max 10)

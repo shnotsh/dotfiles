@@ -1,7 +1,16 @@
 -- Window rules wiki https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
--- Generic floating position
-hl.window_rule({ match = { float = true }, center = true, persistent_size = true })
+-- Resolve and Substance Painter expose XWayland menus as floating windows.
+-- Preserve their requested positions instead of centering those menus.
+hl.window_rule({
+    match = {
+        class         = "negative:^(resolve|Adobe Substance 3D Painter)$",
+        float         = true,
+        initial_title = "negative:^Godot$",
+    },
+    center = true,
+    persistent_size = true,
+})
 
 -- Picture-in-Picture
 hl.window_rule({
@@ -14,7 +23,7 @@ hl.window_rule({
 
 -- Gaming
 local gamingApps = "^(steam_app.*|gamescope)$"
-local gamingWorkspace = "name:gaming"
+local gamingWorkspace = "name:"
 
 hl.window_rule({ match = { content = "game" }, workspace = gamingWorkspace })
 hl.window_rule({ match = { xdg_tag = "^(.*game.*)$" }, workspace = gamingWorkspace, fullscreen_state = 2, content = "game", sync_fullscreen = true })
@@ -46,9 +55,10 @@ hl.window_rule({
 })
 
 -- Apps
--- The editor is initialClass=Godot/initialTitle=Godot. A running project
--- keeps initialTitle=Godot but changes initialClass to the project name.
-hl.window_rule({ match = { initial_class = "negative:^Godot$", initial_title = "^Godot$" }, float = true, center = true, persistent_size = true })
+-- Editors use Godot (XWayland) or org.godotengine.Editor (Wayland).
+-- Runtime windows start with title Godot and use the project name as class.
+hl.window_rule({ match = { initial_class = "^rp$", initial_title = "^Godot$" }, float = true, center = true, persistent_size = true })
+hl.window_rule({ match = { initial_class = "negative:^(Godot|org\\.godotengine\\.Editor|rp)$", initial_title = "^Godot$" }, float = true, center = true })
 hl.window_rule({ match = { class = "^(.*\\.exe)$", float = true }, monitor = PRIMARY_MONITOR, center = true, fullscreen_state = 0 })
 hl.window_rule({ match = { class = "^(.*[Ll]auncher.*)$" }, float = true, monitor = PRIMARY_MONITOR })
 hl.window_rule({ match = { class = "^(vesktop|discord)$" }, monitor = PRIMARY_MONITOR })
@@ -74,6 +84,8 @@ hl.window_rule({
 local terminals = "^(kitty|ghostty|[Kk]onsole|Alacritty|gnome-terminal|xfce[0-9]?-terminal)$"
 
 hl.window_rule({ match = { class = "^(firefox|zen)$" }, opacity = "1.0 override" })
+hl.window_rule({ match = { class = "^figma-linux-next$" }, opacity = "1.0 override" })
+hl.window_rule({ match = { class = "^org\\.godotengine\\.Editor$" }, opacity = "1.0 override" })
 hl.window_rule({ match = { class = "^dev\\.zed\\.Zed$" }, opacity = "1.0 override" })
 hl.window_rule({ match = { class = terminals }, opacity = "1.0 override" }) -- Override opacity in favor of terminal settings for opacity. If your terminal doesn't support transparency, you can remove this rule.
 hl.window_rule({ match = { class = "^app\\.liten\\.Gram$" }, opacity = "0.6 override" })

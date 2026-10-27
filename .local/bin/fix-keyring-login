@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -euo pipefail
+printf 'Configure automatic keyring unlocking at login.\n'
+sudo python3 - <<'PY'
+from pathlib import Path
+import shutil
+p = Path('/etc/pam.d/greetd')
+s = p.read_text()
+if 'pam_gnome_keyring.so' not in s:
+    backup = Path('/etc/pam.d/greetd.before-keyring-unlock')
+    if not backup.exists():
+        shutil.copy2(p, backup)
+    s = s.replace('auth       include      system-local-login\n', 'auth       include      system-local-login\nauth       optional     pam_gnome_keyring.so\n')
+    if 'auth       optional     pam_gnome_keyring.so' not in s:
+        raise SystemExit('Unexpected greetd configuration; no changes made.')
+    s += 'session    optional     pam_gnome_keyring.so auto_start\n'
+    p.write_text(s)
+print('Login configuration updated.')
+PY
+python3 - <<'PY'
+from pathlib import Path
+p = Path.home()/'.local/share/keyrings'
+assert (p/'Default_Keyring.keyring').exists(), 'Original keyring missing'
+assert not (p/'login.keyring').exists(), 'Login keyring already exists; stopping to preserve it'
+PY
+systemctl --user stop gnome-keyring-daemon.service gnome-keyring-daemon.socket
+mv "$HOME/.local/share/keyrings/Default_Keyring.keyring" "$HOME/.local/share/keyrings/login.keyring"
+printf 'login' > "$HOME/.local/share/keyrings/default"
+systemctl --user start gnome-keyring-daemon.socket gnome-keyring-daemon.service
+printf '\nDONE. Log out and log back in with your Linux password to activate automatic unlocking.\n'
+read -r -p 'Press Enter to close.'

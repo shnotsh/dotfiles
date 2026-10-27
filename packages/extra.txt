@@ -1,0 +1,50 @@
+# Packages the configs depend on directly. They are often installed only as
+# dependencies of something else, so `pacman -Qqe` does not list them.
+# One package per line; blank lines and comments are ignored.
+
+# Caps+J region recorder (~/.local/bin/screen-record-toggle)
+gpu-screen-recorder
+slurp
+ffmpeg
+wl-clipboard
+libnotify
+
+# Hyprland session and keybind helpers
+uwsm
+hyprpicker
+xorg-xhost
+gnome-text-editor
+helium-browser-bin
+kitty
+dolphin
+
+# Noctalia and its plugins
+noctalia
+ddcutil
+upower
+lua
+python
+python-dbus
+solaar
+power-profiles-daemon
+procps-ng
+xdg-utils
+ai-usagebar-bin
+
+# Cursor and icon themes used by GTK, Qt and Hyprland
+bibata-cursor-theme-bin
+colloid-icon-theme-git
+cantarell-fonts
+
+# sh-dashboard build requirements
+nodejs
+npm
+pkgconf
+wayland
+wayland-protocols
+
+# Used by this repository's scripts
+git
+github-cli
+rsync
+curl

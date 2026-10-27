@@ -1,0 +1,30 @@
+MenuBar=Disabled
+
+[ContextMenu]
+ShowAddToPlaces=false
+ShowViewMode=false
+
+[General]
+GlobalViewProps=true
+ShowSelectionToggle=false
+Version=202
+ViewPropsTimestamp=2026,8,10,22,2,21.615
+
+[IconsMode]
+IconSize=96
+PreviewSize=80
+UseSystemFont=false
+ViewFont=Cantarell,14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=ffmpegthumbnailer,appimagethumbnail,audiothumbnail,glycin-heif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,glycin-image-rs,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mltpreview,opendocumentthumbnail,ffmpegthumbnailer-audio,glycin-svg,svgthumbnail,gsf-office
+
+[UiSettings]
+ColorScheme=dolphin-readable
