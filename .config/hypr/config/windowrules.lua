@@ -83,7 +83,7 @@ hl.window_rule({
 -- Opacity Overrides
 local terminals = "^(kitty|ghostty|[Kk]onsole|Alacritty|gnome-terminal|xfce[0-9]?-terminal)$"
 
-hl.window_rule({ match = { class = "^(firefox|zen)$" }, opacity = "1.0 override" })
+hl.window_rule({ match = { class = "^(helium)$" }, opacity = "1.0 override" })
 hl.window_rule({ match = { class = "^figma-linux-next$" }, opacity = "1.0 override" })
 hl.window_rule({ match = { class = "^org\\.godotengine\\.Editor$" }, opacity = "1.0 override" })
 hl.window_rule({ match = { class = "^dev\\.zed\\.Zed$" }, opacity = "1.0 override" })
