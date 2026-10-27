@@ -41,7 +41,6 @@ cantarell-fonts
 chatgpt-desktop-bin
 chwd
 claude-code
-claude-desktop
 cpupower
 cryptsetup
 device-mapper
@@ -138,7 +137,6 @@ obs-studio
 okular
 onefetch
 opencl-nvidia
-opencode
 opencolorio
 openssh
 os-prober
@@ -192,7 +190,6 @@ unrar
 unzip
 usb_modeswitch
 usbutils
-vesktop-bin
 vim
 vlc-plugins-all
 volk

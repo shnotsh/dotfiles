@@ -1,4 +1,0 @@
-#tabbrowser-tabpanels[zen-split-view="true"]
-  .browserSidebarContainer.deck-selected {
-  outline: var(--zen-colors-border) !important;
-}

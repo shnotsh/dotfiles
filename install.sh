@@ -18,8 +18,7 @@ if pgrep -x noctalia >/dev/null && [[ $target_home == "$HOME" ]]; then
 fi
 
 mapfile -d '' files < <(
-	cd "$repo_dir" && find .config .local .icons Pictures \
-		.bash_logout .bash_profile .bashrc .zshrc -type f -print0
+	cd "$repo_dir" && find .config .local .icons Pictures -type f -print0
 )
 
 backed_up=0

@@ -23,10 +23,10 @@ cd ~/dotfiles
    Noctalia plugin into `~/Developer/solaar-noctalia`. Noctalia's settings
    register that path as a plugin source.
 4. Clones and installs sh-dashboard (private; needs `gh auth login`).
-5. Enables user services and downloads the wallpapers listed in `wallpapers.txt`.
+5. Enables user services.
 
 It finishes by printing the few manual steps left. Options: `--no-packages`,
-`--no-wallpapers`, `--no-dashboard`. Use `./install.sh` alone to copy only the
+`--no-dashboard`. Use `./install.sh` alone to copy only the
 configuration.
 
 ## Refresh this repository
@@ -52,16 +52,16 @@ git diff   # review before committing; this repository is public
     `~/Videos/Recordings`
   - `fix-keyring-login`: unlocks gnome-keyring at greetd login
 - **Look**: Bibata-Modern-Ice cursor, Colloid-Dark icons (installed from the
-  AUR), Iosevka Custom font, KDE color schemes, and the GTK/Qt/Kitty/Alacritty/btop
+  AUR), Iosevka Custom font, KDE color schemes, and the GTK/Qt/Kitty/btop
   themes Noctalia generates
-- **Apps**: Zed, Gram, Godot, Blender, Zen (customizations only), Kitty,
-  Alacritty, btop, fastfetch, Fish, Micro, opencode, MangoHud, Goverlay,
-  vkBasalt, vkSumi, Dolphin, default applications (`mimeapps.list`)
-- **Packages**
-  - `packages/pacman.txt`: explicitly installed repository packages
+- **Apps**: Zed, Godot, Blender, Kitty, btop, fastfetch, Fish, Micro, MangoHud,
+  Goverlay, vkBasalt, vkSumi, Dolphin, default applications (`mimeapps.list`)
+- **Packages** (curated by hand; `collect.sh` only reports new unlisted ones)
+  - `packages/pacman.txt`: repository packages
   - `packages/aur.txt`: AUR packages
   - `packages/extra.txt`: runtime dependencies the configs and scripts need
     directly (slurp, ffmpeg, wl-clipboard, solaar, python-dbus, …)
+  - `packages/ignored.txt`: installed here but deliberately not restored
 
 ## Not included
 
@@ -77,4 +77,3 @@ addresses and device serials.
   NVIDIA environment (`config/environment.lua`)
 - Absolute `/home/sh` paths. `install.sh` rewrites them when the target home
   directory is different.
-- The Zen profile directory `js9nf94v.Default (release)`

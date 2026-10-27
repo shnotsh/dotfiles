@@ -28,7 +28,7 @@ copy_file() {
 # --- Complete portable configuration trees ---------------------------------
 for directory in \
 	hypr noctalia qt5ct qt6ct kitty uwsm xsettingsd \
-	alacritty btop fastfetch fish MangoHud; do
+	btop fastfetch fish MangoHud; do
 	copy_tree ".config/$directory"
 done
 
@@ -40,24 +40,14 @@ for file in \
 	gtk-4.0/gtk.css gtk-4.0/noctalia.css gtk-4.0/thumbnail.png \
 	blender/5.2/config/userpref.blend \
 	goverlay/goverlay.conf goverlay/blacklist.conf \
-	gram/settings.jsonc gram/keymap.jsonc gram/tasks.jsonc \
 	micro/settings.json micro/bindings.json \
-	opencode/opencode.jsonc opencode/cli.json \
 	vkBasalt/vkBasalt.conf vkSumi/vkSumi.conf \
 	mimeapps.list dolphinrc kdeglobals pavucontrol.ini; do
 	copy_file ".config/$file"
 done
 
 copy_tree .config/zed/themes
-copy_tree .config/gram/themes
 copy_tree .config/micro/colorschemes
-
-# Zen profile data is particularly sensitive. Collect customization only.
-zen_profile='js9nf94v.Default (release)'
-copy_tree ".config/zen/$zen_profile/chrome"
-for file in user.js zen-keyboard-shortcuts.json zen-themes.json; do
-	copy_file ".config/zen/$zen_profile/$file"
-done
 
 # --- Noctalia runtime state --------------------------------------------------
 # Settings changed in the GUI live in settings.toml, not ~/.config/noctalia.
@@ -101,18 +91,12 @@ for file in game_mode_off.svg game_mode_on.svg start-here-cachyos-min.svg graphi
 	copy_file "Pictures/Icons/$file"
 done
 
-# Wallpapers are third-party images: record their wallhaven IDs only.
-find "$HOME/Pictures/Wallpapers" -maxdepth 1 -type f -name 'wallhaven-*' -printf '%f\n' \
-	| sort >"$repo_dir/wallpapers.txt"
-
-for file in .bash_logout .bash_profile .bashrc .zshrc; do
-	copy_file "$file"
-done
-
 # --- Package lists ------------------------------------------------------------
-mkdir -p "$repo_dir/packages"
-pacman -Qqen | sort >"$repo_dir/packages/pacman.txt"
-pacman -Qqem | sort >"$repo_dir/packages/aur.txt"
+# The lists are curated by hand, so only report explicitly installed packages
+# that none of them mention yet.
+listed=$(grep -hvE '^\s*(#|$)' "$repo_dir"/packages/*.txt | sort -u)
+unlisted=$(comm -23 <(pacman -Qqe | sort) <(printf '%s\n' "$listed"))
+[[ -n $unlisted ]] && printf 'Installed but not in packages/*.txt:\n%s\n\n' "$unlisted"
 
 printf 'Collected configuration into %s\n' "$repo_dir"
 printf 'Review "git diff" for secrets before committing.\n'

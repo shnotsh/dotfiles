@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 # Restore this workstation on a fresh CachyOS/Arch install:
-# packages -> dotfiles -> custom Noctalia plugin -> services -> wallpapers.
-# Usage: ./bootstrap.sh [--no-packages] [--no-wallpapers] [--no-dashboard]
+# packages -> dotfiles -> custom Noctalia plugin -> sh-dashboard -> services.
+# Usage: ./bootstrap.sh [--no-packages] [--no-dashboard]
 
 set -euo pipefail
 
 repo_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 developer_dir="$HOME/Developer"
-install_packages=1 fetch_wallpapers=1 install_dashboard=1
+install_packages=1 install_dashboard=1
 
 for argument in "$@"; do
 	case $argument in
 		--no-packages) install_packages=0 ;;
-		--no-wallpapers) fetch_wallpapers=0 ;;
 		--no-dashboard) install_dashboard=0 ;;
 		-h | --help) sed -n '2,4p' "$0"; exit 0 ;;
 		*) printf 'Unknown option: %s\n' "$argument" >&2; exit 2 ;;
@@ -85,18 +84,6 @@ fi
 # --- Services -------------------------------------------------------------------
 step 'Enabling user services'
 systemctl --user enable psd.service 2>/dev/null || printf 'psd is not installed; skipped.\n'
-
-# --- Wallpapers -----------------------------------------------------------------
-if ((fetch_wallpapers)); then
-	step 'Downloading wallpapers from wallhaven'
-	while read -r name; do
-		[[ -z $name || -e $HOME/Pictures/Wallpapers/$name ]] && continue
-		id=${name#wallhaven-}; id=${id%.*}
-		curl -fsSL --retry 2 -o "$HOME/Pictures/Wallpapers/$name" \
-			"https://w.wallhaven.cc/full/${id:0:2}/$name" \
-			|| printf 'Could not download %s\n' "$name"
-	done <"$repo_dir/wallpapers.txt"
-fi
 
 step 'Done. Remaining manual steps'
 cat <<'EOF'
